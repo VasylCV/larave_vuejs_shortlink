@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+
+Route::get('link/get', 'App\Http\Controllers\API\ShortLinkAPIController@getLink');
+Route::post('link/store', 'App\Http\Controllers\API\ShortLinkAPIController@store');
+
+//Route::resource('link', App\Http\Controllers\API\ShortLinkAPIController::class);
